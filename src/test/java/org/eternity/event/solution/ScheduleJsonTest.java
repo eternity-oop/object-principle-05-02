@@ -20,7 +20,7 @@ public class ScheduleJsonTest {
                                         new MonthlyPlan(DayOfWeek.MONDAY, 2)));
 
         JSONAssert.assertEquals("""
-                {"title":"미팅","from":"13:00","duration":60,"expression":{"dayOfWeek":"MONDAY","ordinal":2}}""",
+                {"title":"미팅","from":"13:00","duration":60,"plan":{"dayOfWeek":"MONDAY","ordinal":2}}""",
                 schedule.toJson(),
                 JSONCompareMode.LENIENT);
     }
@@ -33,7 +33,7 @@ public class ScheduleJsonTest {
                                             new WeeklyPlan(Set.of(DayOfWeek.MONDAY, DayOfWeek.TUESDAY))));
 
         JSONAssert.assertEquals("""
-                {"title":"미팅","from":"13:00","duration":60,"expression":{"dayOfWeeks":["MONDAY","TUESDAY"]}}""",
+                {"title":"미팅","from":"13:00","duration":60,"plan":{"dayOfWeeks":["MONDAY","TUESDAY"]}}""",
                 schedule.toJson(),
                 JSONCompareMode.LENIENT);
     }
